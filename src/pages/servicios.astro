@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Mi homelab | Tetute"
+  description="Catálogo de proyectos y servicios autohospedados del laboratorio personal de Tetute."
+>
+  <section class="page-intro">
+    <p class="eyebrow">Laboratorio personal</p>
+    <h1>Mi homelab.</h1>
+    <p class="lead">
+      Un pequeño catálogo de los sistemas y servicios con los que experimento para aprender
+      administración, redes, virtualización y acceso remoto.
+    </p>
+  </section>
+
+  <aside class="security-note" aria-label="Nota de seguridad">
+    <span aria-hidden="true">!</span>
+    <div>
+      <strong>Los paneles de administración siguen siendo privados.</strong>
+      <p>Esta página es pública. No incluyas IPs internas, contraseñas ni enlaces a interfaces administrativas que no estén protegidas. Los servicios privados deberían requerir la red local, una VPN o una capa de acceso autenticado.</p>
+    </div>
+  </aside>
+
+  <section class="service-grid" aria-label="Servicios del homelab">
+    <article class="service-card">
+      <div class="service-icon" aria-hidden="true">PVE</div>
+      <p class="card-kicker">Virtualización</p>
+      <h3>Proxmox VE</h3>
+      <p>Laboratorio para administrar máquinas virtuales y contenedores que ejecutan distintos servicios.</p>
+      <div class="service-bottom">
+        <span class="status-label is-private">Acceso privado</span>
+        <span class="muted">Panel administrativo</span>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <div class="service-icon" aria-hidden="true">DNS</div>
+      <p class="card-kicker">Resolución de nombres</p>
+      <h3>Technitium DNS</h3>
+      <p>DNS interno del laboratorio para resolver nombres de los equipos y servicios de la red.</p>
+      <div class="service-bottom">
+        <span class="status-label is-private">Acceso privado</span>
+        <span class="muted">Panel administrativo</span>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <div class="service-icon" aria-hidden="true">VPN</div>
+      <p class="card-kicker">Acceso remoto</p>
+      <h3>VPN y acceso privado</h3>
+      <p>Acceso a recursos propios sin necesidad de publicar directamente sus interfaces en Internet.</p>
+      <div class="service-bottom">
+        <span class="status-label is-private">Solo dispositivos autorizados</span>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <div class="service-icon" aria-hidden="true">NET</div>
+      <p class="card-kicker">Red doméstica</p>
+      <h3>OpenWrt y VLANs</h3>
+      <p>Pruebas de segmentación y reglas de red para separar la gestión, los servidores y los clientes.</p>
+      <div class="service-bottom">
+        <span class="status-label is-private">Acceso privado</span>
+        <span class="muted">Red e infraestructura</span>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <div class="service-icon" aria-hidden="true">GAME</div>
+      <p class="card-kicker">Experimentación</p>
+      <h3>Servidores de juegos</h3>
+      <p>Espacio para probar despliegue, administración, copias de seguridad y rendimiento de servidores de juego.</p>
+      <div class="service-bottom">
+        <span class="status-label is-building">En preparación</span>
+        <span class="muted">Proyecto experimental</span>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <div class="service-icon" aria-hidden="true">+</div>
+      <p class="card-kicker">Próximo paso</p>
+      <h3>Más servicios</h3>
+      <p>Aquí puedes añadir nuevas herramientas cuando las hayas instalado, probado y documentado.</p>
+      <div class="service-bottom">
+        <span class="status-label is-building">Por añadir</span>
+        <a class="service-open" href="/proyectos/">Ver proyectos ↗</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="service-help">
+    <h2>¿Cómo añadir un servicio?</h2>
+    <p>
+      En <code>src/pages/servicios.astro</code>, duplica uno de los bloques <code>&lt;article class="service-card"&gt;</code>, cambia el título, descripción y estado. Si más adelante añades un enlace, utiliza solo una URL que esté correctamente protegida. No publiques directamente paneles como Proxmox, el router o la administración de DNS.
+    </p>
+  </section>
+</Layout>
